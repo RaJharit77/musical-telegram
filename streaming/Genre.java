@@ -1,4 +1,4 @@
-package streaming;
+package streaming.streaming;
 
 import java.util.Objects;
 

@@ -1,7 +1,6 @@
-package streaming;
+package streaming.streaming;
 
 import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,8 +15,8 @@ public class Song {
     private String id;
     private String title;
     private Duration duration;
-    private Artist artist;
-    private List<Genre> genres;
+    private streaming.streaming.Artist artist;
+    private List<streaming.streaming.Genre> genres;
 
 
     public Song(String id, String title, Duration duration, Artist artist, List<Genre> genres) {
@@ -52,7 +51,7 @@ public class Song {
         this.duration = duration;
     }
 
-    public Artist getArtist() {
+    public streaming.streaming.Artist getArtist() {
         return artist;
     }
 
@@ -60,7 +59,7 @@ public class Song {
         this.artist = artist;
     }
 
-    public List<Genre> getGenres() {
+    public List<streaming.streaming.Genre> getGenres() {
         return genres;
     }
 

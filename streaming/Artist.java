@@ -1,4 +1,4 @@
-package streaming;
+package streaming.streaming;
 
 /**
  * Note : ceci est une classe abstraite parce qu'on ne veut pas l'instancier, il sert juste de

@@ -1,4 +1,4 @@
-package streaming;
+package streaming.streaming;
 
 import java.util.List;
 import java.util.Objects;
@@ -9,9 +9,9 @@ import java.util.Objects;
 public class User {
     private String id;
     private String username;
-    private List<Playlist> playlists;
+    private List<streaming.streaming.Playlist> playlists;
 
-    public User(String id, String username, List<Playlist> playlists) {
+    public User(String id, String username, List<streaming.streaming.Playlist> playlists) {
         this.id = id;
         this.username = username;
         this.playlists = playlists;
@@ -33,11 +33,11 @@ public class User {
         this.username = username;
     }
 
-    public List<Playlist> getPlaylists() {
+    public List<streaming.streaming.Playlist> getPlaylists() {
         return playlists;
     }
 
-    public void setPlaylists(List<Playlist> playlists) {
+    public void setPlaylists(List<streaming.streaming.Playlist> playlists) {
         this.playlists = playlists;
     }
 

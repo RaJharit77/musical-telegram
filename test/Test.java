@@ -1,4 +1,6 @@
-package streaming;
+package streaming.test;
+
+import streaming.streaming.*;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -14,28 +16,28 @@ import java.util.List;
 public class Test {
     public static void main(String[] args) {
         // Create some genres
-        Genre rock = new Genre("1", "Rock");
-        Genre pop = new Genre("2", "Pop");
-        Genre jazz = new Genre("3", "Jazz");
+        streaming.streaming.Genre rock = new streaming.streaming.Genre("1", "Rock");
+        streaming.streaming.Genre pop = new streaming.streaming.Genre("2", "Pop");
+        streaming.streaming.Genre jazz = new Genre("3", "Jazz");
 
         // Create some artists
-        SoloArtist artist1 = new SoloArtist("1", 1990, "John Doe", "USA", "John", "Doe", LocalDate.of(1970, 5, 15));
-        SoloArtist artist2 = new SoloArtist("2", 2000, "Jane Smith", "UK", "Jane", "Smith", LocalDate.of(1980, 3, 20));
+        streaming.streaming.SoloArtist artist1 = new streaming.streaming.SoloArtist("1", 1990, "John Doe", "USA", "John", "Doe", LocalDate.of(1970, 5, 15));
+        streaming.streaming.SoloArtist artist2 = new SoloArtist("2", 2000, "Jane Smith", "UK", "Jane", "Smith", LocalDate.of(1980, 3, 20));
 
-        GroupArtist group1 = new GroupArtist("3", 2010, "The Rockers", "USA", Arrays.asList(artist1, artist2));
+        streaming.streaming.GroupArtist group1 = new GroupArtist("3", 2010, "The Rockers", "USA", Arrays.asList(artist1, artist2));
 
         // Create some songs
-        Song song1 = new Song("1", "Rock Anthem", Duration.ofMinutes(4), artist1, Arrays.asList(rock, jazz));
-        Song song2 = new Song("2", "Pop Hit", Duration.ofMinutes(3), artist2, List.of(pop));
-        Song song3 = new Song("3", "Jazz Vibes", Duration.ofMinutes(5), artist1, List.of(jazz));
+        streaming.streaming.Song song1 = new streaming.streaming.Song("1", "Rock Anthem", Duration.ofMinutes(4), artist1, Arrays.asList(rock, jazz));
+        streaming.streaming.Song song2 = new streaming.streaming.Song("2", "Pop Hit", Duration.ofMinutes(3), artist2, List.of(pop));
+        streaming.streaming.Song song3 = new Song("3", "Jazz Vibes", Duration.ofMinutes(5), artist1, List.of(jazz));
 
         // Create some users
         User user1 = new User("1", "user1", new ArrayList<>());
         User user2 = new User("2", "user2", new ArrayList<>());
 
         // Create some playlists
-        Playlist playlist1 = new Playlist("1", new ArrayList<>(Arrays.asList(song1, song2)), user1, new ArrayList<>(Arrays.asList(user2, user1)));
-        Playlist playlist2 = new Playlist("2", new ArrayList<>(Arrays.asList(song2, song3)), user2, new ArrayList<>());
+        streaming.streaming.Playlist playlist1 = new streaming.streaming.Playlist("1", new ArrayList<>(Arrays.asList(song1, song2)), user1, new ArrayList<>(Arrays.asList(user2, user1)));
+        streaming.streaming.Playlist playlist2 = new streaming.streaming.Playlist("2", new ArrayList<>(Arrays.asList(song2, song3)), user2, new ArrayList<>());
 
         // Add playlists to users
         user1.getPlaylists().add(playlist1);

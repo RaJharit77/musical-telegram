@@ -1,4 +1,4 @@
-package streaming;
+package streaming.streaming;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Note : pas grand chose en fait... juste un ensemble d'artistes solo, c'est tout.
  */
-public class GroupArtist extends Artist{
+public class GroupArtist extends Artist {
     private List<SoloArtist> members;
 
     public GroupArtist(
