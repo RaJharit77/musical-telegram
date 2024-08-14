@@ -29,34 +29,28 @@ public class StreamingTest {
 
     @BeforeEach
     public void setUp() {
-        // Create some genres
         rock = new Genre("1", "Rock");
         pop = new Genre("2", "Pop");
         jazz = new Genre("3", "Jazz");
 
-        // Create some artists
         artist1 = new SoloArtist("1", 1990, "John Doe", "USA", "John", "Doe", LocalDate.of(1970, 5, 15));
         artist2 = new SoloArtist("2", 2000, "Jane Smith", "UK", "Jane", "Smith", LocalDate.of(1980, 3, 20));
 
         group1 = new GroupArtist("3", 2010, "The Rockers", "USA", Arrays.asList(artist1, artist2));
 
-        // Create some songs
         song1 = new Song("1", "Rock Anthem", Duration.ofMinutes(4), artist1, Arrays.asList(rock, jazz));
         song2 = new Song("2", "Pop Hit", Duration.ofMinutes(3), artist2, List.of(pop));
         song3 = new Song("3", "Jazz Vibes", Duration.ofMinutes(5), artist1, List.of(jazz));
 
-        // Create some users
         user1 = new User("1", "user1", new ArrayList<>());
         user2 = new User("2", "user2", new ArrayList<>());
 
-        // Create some playlists
         playlist1 = new Playlist("1", new ArrayList<>(Arrays.asList(song1, song2)), user1, new ArrayList<>(Arrays.asList(user2, user1)));
         playlist2 = new Playlist("2", new ArrayList<>(Arrays.asList(song2, song3)), user2, new ArrayList<>());
     }
 
     @Test
     public void testGetTotalLikes() {
-        // Test getTotalLikes method
         assertEquals(2, playlist1.getTotalLikes(), "Number of likes for playlist1 should be 2");
     }
 
@@ -92,7 +86,6 @@ public class StreamingTest {
 
     @Test
     public void testExcludeGenresFromPlaylist() {
-        // Test excluding genres from a playlist: here we shall exclude `Rock` songs.
         Playlist filteredPlaylist = playlist1.exclude(List.of(rock));
         assertEquals(1, filteredPlaylist.getSongs().size(), "Songs in filtered playlist excluding rock should be 1");
         assertFalse(filteredPlaylist.getSongs().contains(song1), "Filtered playlist should not contain rock songs");
